@@ -31,9 +31,7 @@ $data_res = json_decode($res);
 // exit();
 
 if($data_res->Deleted==false){
-    echo 'created';
-    // header('Location: index.php');
+    header('Location: index.php');
 }else{
-    echo 'notcreated';
-    // header('Location: create.php');
+    header('Location: create.php');
 }

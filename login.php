@@ -42,11 +42,11 @@
                   <form role="form" method="POST" action="login_action.php">
                     <label>Email</label>
                     <div class="mb-3">
-                      <input type="email" name="Email" class="form-control" placeholder="Email">
+                      <input type="email" name="Email" class="form-control" placeholder="Email" required>
                     </div>
                     <label>Password</label>
                     <div class="mb-3">
-                      <input type="password" name="Password" class="form-control" placeholder="Password">
+                      <input type="password" name="Password" class="form-control" placeholder="Password" required>
                     </div>
                     <div class="form-check form-switch">
                       <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
