@@ -1,5 +1,6 @@
 <?php
 include('httpCurl.php');
+
 $tpin = $_POST['TPIN'];
 $businessCert = $_POST['BusinessCertificateNumber'];
 $tradingName = $_POST['TradingName'];
@@ -30,7 +31,10 @@ function safe_data($data) {
 
 $dd=json_encode($data);
 
-$res =  httpRequestPost('/Taxpayers/add',$dd);
+// echo $dd;
+// exit();
+
+$res =  httpRequestPost('/Taxpayers/edit',$dd);
 
 // echo $res;
 //print_r($res);
@@ -42,5 +46,5 @@ $data_res = json_decode($res);
 if($data_res->Deleted==false){
     header('Location: index.php');
 }else{
-    header('Location: create.php');
+    //header('Location: create.php');
 }

@@ -1,6 +1,5 @@
 <?php
-// Start the session
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <title>
-    Soft UI Dashboard by Creative Tim
+    MRA Challenge
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -39,14 +38,19 @@
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
+                  <?php
+                    if(isset($_SESSION['error_email'])){
+                      echo "<font color='red'>". $_SESSION['error_email']."</font>";
+                    }
+                  ?>
                   <form role="form" method="POST" action="login_action.php">
                     <label>Email</label>
                     <div class="mb-3">
-                      <input type="email" name="Email" class="form-control" placeholder="Email" required>
+                      <input type="text" name="Email" class="form-control" placeholder="Email" >
                     </div>
                     <label>Password</label>
                     <div class="mb-3">
-                      <input type="password" name="Password" class="form-control" placeholder="Password" required>
+                      <input type="password" name="Password" class="form-control" placeholder="Password" >
                     </div>
                     <div class="form-check form-switch">
                       <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
